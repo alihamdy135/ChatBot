@@ -1,0 +1,29 @@
+# Core app
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-dotenv==1.0.1
+pydantic==2.9.2
+
+# ML - inference (used by both training notebooks and the local_app)
+joblib==1.4.2
+scikit-learn==1.5.2
+numpy<2.0
+sentence-transformers==3.1.1
+faiss-cpu==1.8.0.post1
+transformers==4.44.2
+datasets==2.21.0
+accelerate==0.34.2
+
+# LLM generation (cloud API, not local -- keeps VRAM free for training the 3 local models)
+groq==0.11.0
+
+# --- PyTorch: install separately with CUDA support for your 4GB GPU ---
+# Do NOT just `pip install torch` from this file -- that gets a CPU-only build.
+# Instead run (adjust cu121 to match your installed CUDA version, check with `nvidia-smi`):
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+#
+# If unsure of your CUDA version or hit install issues, the CPU build still works,
+# just slower for the DistilBERT training step:
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
