@@ -14,6 +14,7 @@ env/
 # Model checkpoints (too large for git)
 sentiment_ckpt/
 */sentiment_ckpt/
+local_app/models/sentiment/model.safetensors
 
 # Node
 node_modules/
